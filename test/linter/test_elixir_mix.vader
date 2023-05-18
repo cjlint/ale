@@ -10,10 +10,10 @@ After:
 
 Execute(The default mix command should be correct):
   AssertLinterCwd ale#path#Simplify(g:dir . '/../test-files/elixir/mix_project')
-  AssertLinter 'mix', g:env_prefix . 'mix compile %s'
+  AssertLinter 'mix', g:env_prefix . 'mix compile --no-compile %s 2>&1'
 
 Execute(Build mix commands with an umbrella root):
   call ale#test#SetFilename('../test-files/elixir/umbrella_project/apps/mix_project/lib/app.ex')
 
   AssertLinterCwd ale#path#Simplify(g:dir . '/../test-files/elixir/umbrella_project')
-  AssertLinter 'mix', g:env_prefix . 'mix compile %s'
+  AssertLinter 'mix', g:env_prefix . 'mix compile --no-compile %s 2>&1'

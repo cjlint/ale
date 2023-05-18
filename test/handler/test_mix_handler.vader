@@ -12,10 +12,34 @@ Execute(The mix handler should parse lines correctly):
   \     'bufnr': 347,
   \     'lnum': 87,
   \     'col': 0,
-  \     'text': 'undefined function update_in/4',
+  \     'text': 'CompileError: undefined function update_in/4',
+  \     'type': 'E',
+  \   },
+  \   {
+  \     'bufnr': 347,
+  \     'lnum': 15,
+  \     'col': 9,
+  \     'text': 'SyntaxError: syntax error before: foo',
+  \     'type': 'E',
+  \   },
+  \   {
+  \     'bufnr': 347,
+  \     'lnum': 0,
+  \     'col': 0,
+  \     'text': 'KeyError: key :invalid_key not found',
+  \     'type': 'E',
+  \   },
+  \   {
+  \     'bufnr': 347,
+  \     'lnum': 0,
+  \     'col': 0,
+  \     'text': 'RuntimeError: error',
   \     'type': 'E',
   \   },
   \ ],
   \ ale_linters#elixir#mix#Handle(347, [
-  \   '** (CompileError) apps/sim/lib/sim/server.ex:87: undefined function update_in/4'
+  \   '** (CompileError) apps/sim/lib/sim/server.ex:87: undefined function update_in/4',
+  \   '** (SyntaxError) mix.exs:15:9: syntax error before: foo',
+  \   '** (KeyError) key :invalid_key not found',
+  \   '** (RuntimeError) error'
   \ ])
